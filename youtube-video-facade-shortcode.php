@@ -7,7 +7,7 @@
  * Author:      Lloyd Rick Guyon
  * Author URI:  https://profiles.wordpress.org/lloydrick/
  * License:     GPL v2 or later
- * Text Domain: yvfs
+ * Text Domain: yvf
  */
 
 // Register the shortcode
