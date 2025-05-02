@@ -38,64 +38,68 @@ function lazy_youtube_shortcode($atts) {
 add_shortcode('lazy_youtube', 'lazy_youtube_shortcode');
 
 // Enqueue CSS and JS
-function lazy_youtube_enqueue_assets() {
-    // Inline CSS
-    $css = '
-    .youtube-lazy {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        cursor: pointer;
-        overflow: hidden;
-    }
+function enqueue_lazy_youtube_assets_for_specific_pages() {
+    $target_page_ids = array(46); // Add your target page IDs here
 
-    .youtube-thumbnail {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-    }
+    if (is_page($target_page_ids)) {
+        // Inline CSS
+        $css = '
+        .youtube-lazy {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            cursor: pointer;
+            overflow: hidden;
+        }
 
-    .play-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        pointer-events: none;
-    }
+        .youtube-thumbnail {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+        }
 
-    .play-button svg {
-        display: block;
-    }';
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            pointer-events: none;
+        }
 
-    wp_register_style('lazy-youtube-style', false);
-    wp_enqueue_style('lazy-youtube-style');
-    wp_add_inline_style('lazy-youtube-style', $css);
+        .play-button svg {
+            display: block;
+        }';
 
-    // Inline JS
-    $js = '
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".youtube-lazy").forEach(el => {
-            el.addEventListener("click", function () {
-                const videoId = el.dataset.id;
-                const iframe = document.createElement("iframe");
-                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-                iframe.setAttribute("frameborder", "0");
-                iframe.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
-                iframe.allowFullscreen = true;
-                iframe.style.width = "100%";
-                iframe.style.height = "100%";
-                el.innerHTML = "";
-                el.appendChild(iframe);
+        wp_register_style('lazy-youtube-style', false);
+        wp_enqueue_style('lazy-youtube-style');
+        wp_add_inline_style('lazy-youtube-style', $css);
+
+        // Inline JS
+        $js = '
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".youtube-lazy").forEach(el => {
+                el.addEventListener("click", function () {
+                    const videoId = el.dataset.id;
+                    const iframe = document.createElement("iframe");
+                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                    iframe.setAttribute("frameborder", "0");
+                    iframe.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");
+                    iframe.allowFullscreen = true;
+                    iframe.style.width = "100%";
+                    iframe.style.height = "100%";
+                    el.innerHTML = "";
+                    el.appendChild(iframe);
+                });
             });
-        });
-    });';
+        });';
 
-    wp_register_script('lazy-youtube', false, [], false, true);
-    wp_enqueue_script('lazy-youtube');
-    wp_add_inline_script('lazy-youtube', $js);
+        wp_register_script('lazy-youtube', false, [], false, true);
+        wp_enqueue_script('lazy-youtube');
+        wp_add_inline_script('lazy-youtube', $js);
+    }
 }
-add_action('wp_enqueue_scripts', 'lazy_youtube_enqueue_assets');
+add_action('wp_enqueue_scripts', 'enqueue_lazy_youtube_assets_for_specific_pages');
