@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: YouTube Video Facade
- * Description: Adds a shortcode to display a YouTube thumbnail, and loads the video only on click.
+ * Description: Show a facade/thumbnail for a YouTube Video and load YouTube video only on click.
  * Plugin URI:  https://ricklabs.net/
  * Version:     0.1.0
  * Author:      Lloyd Rick Guyon
