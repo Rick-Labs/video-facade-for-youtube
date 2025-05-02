@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: YouTube Video Facade
+ * Plugin Name: Video Facade for YouTube
  * Description: Show a facade/thumbnail for a YouTube Video and load YouTube video only on click.
  * Plugin URI:  https://github.com/Rick-Labs/youtube-video-facade
  * Version:     0.1.0
  * Author:      Lloyd Rick Guyon
  * Author URI:  https://profiles.wordpress.org/lloydrick/
  * License:     GPL v2 or later
- * Text Domain: yvf
+ * Text Domain: video-facade-for-youtube
  */
 
 // Register the shortcode
