@@ -1,10 +1,11 @@
 <?php
 /**
  * Plugin Name: YouTube Video Facade Shortcode
- * Description: Adds a shortcode [lazy_youtube] to display a YouTube thumbnail that loads the video only on click.
- * Version:     1.0
- * Author:      John Smith
- * Author URI:  https://ricklabs.net/
+ * Description: Adds a shortcode to display a YouTube thumbnail, and loads the video only on click.
+ * Plugin URI:  https://ricklabs.net/
+ * Version:     0.1.0
+ * Author:      Lloyd Rick Guyon
+ * Author URI:  https://profiles.wordpress.org/lloydrick/
  * License:     GPL v2 or later
  * Text Domain: yvfs
  */
