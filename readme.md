@@ -40,4 +40,4 @@ You need to enqueue the CSS and JS on the page where you added the shortcode. Th
 5. Insert the post ID in the array, e.g. `$target_page_ids = array(21,23);`
 6. Add the post IDs of pages/posts containing the shortcode as necessary.
 
-That's it.
+That's it! You won't get the `Lazy load third-party resources with facades` warning anymore!
