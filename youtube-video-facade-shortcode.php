@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: YouTube Video Facade Shortcode
+ * Plugin Name: YouTube Video Facade
  * Description: Adds a shortcode to display a YouTube thumbnail, and loads the video only on click.
  * Plugin URI:  https://ricklabs.net/
  * Version:     0.1.0
@@ -11,7 +11,7 @@
  */
 
 // Register the shortcode
-function lazy_youtube_shortcode($atts) {
+function yvf_shortcode($atts) {
     $atts = shortcode_atts(
         array(
             'id' => '',
@@ -19,13 +19,13 @@ function lazy_youtube_shortcode($atts) {
             'alt' => 'Video Thumbnail',
         ),
         $atts,
-        'lazy_youtube'
+        'yvf'
     );
 
     ob_start();
     ?>
-    <div class="youtube-lazy" data-id="<?php echo esc_attr($atts['id']); ?>">
-        <img class="youtube-thumbnail" src="<?php echo esc_url($atts['thumbnail']); ?>" alt="<?php echo esc_attr($atts['alt']); ?>" />
+    <div class="youtube-video-facade" data-id="<?php echo esc_attr($atts['id']); ?>">
+        <img class="youtube-video-thumbnail" src="<?php echo esc_url($atts['thumbnail']); ?>" alt="<?php echo esc_attr($atts['alt']); ?>" />
         <div class="play-button">
             <svg viewBox="0 0 68 48" width="68" height="48" xmlns="http://www.w3.org/2000/svg">
                 <path d="M66.52 7.02a8.27 8.27 0 00-5.82-5.84C56.3 0 34 0 34 0S11.7 0 7.3 1.18a8.27 8.27 0 00-5.82 5.84A85.13 85.13 0 000 24a85.13 85.13 0 001.48 16.98 8.27 8.27 0 005.82 5.84C11.7 48 34 48 34 48s22.3 0 26.7-1.18a8.27 8.27 0 005.82-5.84A85.13 85.13 0 0068 24a85.13 85.13 0 00-1.48-16.98z" fill="#f00"/>
@@ -36,16 +36,16 @@ function lazy_youtube_shortcode($atts) {
     <?php
     return ob_get_clean();
 }
-add_shortcode('lazy_youtube', 'lazy_youtube_shortcode');
+add_shortcode('yvf', 'yvf_shortcode');
 
 // Enqueue CSS and JS
-function enqueue_lazy_youtube_assets_for_specific_pages() {
-    $target_page_ids = array(46); // Add your target page IDs here
+function enqueue_yvf_assets_for_specific_pages() {
+    $target_page_ids = array(21); // Add your target page IDs here
 
     if (is_page($target_page_ids)) {
         // Inline CSS
         $css = '
-        .youtube-lazy {
+        .youtube-video-facade {
             position: relative;
             width: 100%;
             aspect-ratio: 16 / 9;
@@ -53,7 +53,7 @@ function enqueue_lazy_youtube_assets_for_specific_pages() {
             overflow: hidden;
         }
 
-        .youtube-thumbnail {
+        .youtube-video-thumbnail {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -75,14 +75,14 @@ function enqueue_lazy_youtube_assets_for_specific_pages() {
             display: block;
         }';
 
-        wp_register_style('lazy-youtube-style', false);
-        wp_enqueue_style('lazy-youtube-style');
-        wp_add_inline_style('lazy-youtube-style', $css);
+        wp_register_style('youtube-video-facade-style', false);
+        wp_enqueue_style('youtube-video-facade-style');
+        wp_add_inline_style('youtube-video-facade-style', $css);
 
         // Inline JS
         $js = '
         document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".youtube-lazy").forEach(el => {
+            document.querySelectorAll(".youtube-video-facade").forEach(el => {
                 el.addEventListener("click", function () {
                     const videoId = el.dataset.id;
                     const iframe = document.createElement("iframe");
@@ -98,9 +98,9 @@ function enqueue_lazy_youtube_assets_for_specific_pages() {
             });
         });';
 
-        wp_register_script('lazy-youtube', false, [], false, true);
-        wp_enqueue_script('lazy-youtube');
-        wp_add_inline_script('lazy-youtube', $js);
+        wp_register_script('youtube-video-facade', false, [], false, true);
+        wp_enqueue_script('youtube-video-facade');
+        wp_add_inline_script('youtube-video-facade', $js);
     }
 }
-add_action('wp_enqueue_scripts', 'enqueue_lazy_youtube_assets_for_specific_pages');
+add_action('wp_enqueue_scripts', 'enqueue_yvf_assets_for_specific_pages');
