@@ -1,4 +1,17 @@
-# Add a facade for YouTube Videos using a shortcode
+=== Video Facade for YouTube ===
+Contributors: lloydrick
+Donate link: https://ricklabs.net/buy-me-a-coffee
+Tags: facade, optimization
+Requires at least: 4.7
+Tested up to: 6.8
+Stable tag: 4.3
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+
+Show a facade/thumbnail for a YouTube Video and load YouTube video only on click.
+
+== Description ==
 
 This plugin adds a shortcode to display a YouTube thumbnail, and loads the video only on click:
 
@@ -11,23 +24,23 @@ The shortcode accepts three parameters:
 2. `thumbnail` - URL of the image used for the thumbnail
 3. `alt` - Alt text for the thumbnail
 
-## To use the plugin
+### To use the plugin
 1. Download and install the latest version from the Releases - https://github.com/Rick-Labs/youtube-video-facade-shortcode/releases
 2. Activate the plugin
 3. Add the shortcode using the Shortcode Block and supply the `id`, `thumbnail`, and `alt` values.
 
-## To get the YouTube Video ID
+### To get the YouTube Video ID
 The video id comes after the `watch?v=` URL query string:
 
 ![YouTube Video ID](tutorials/youtube-video-id.png)
 
-## To get the image URL
+### To get the image URL
 1. Upload the thumbnail to your WordPress media library
 2. Open the image, and click `Copy URL to Clipboard` to get the image URL:
 
 ![Thumbnail URL](tutorials/copy-url-to-clipboard.png)
 
-## IMPORTANT!
+### IMPORTANT!
 You need to enqueue the CSS and JS on the page where you added the shortcode. This is done manually for now for performance reasons, but a more efficient method is in the works.
 
 1. Get the post ID. You can get this when editing:
