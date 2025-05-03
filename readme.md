@@ -1,18 +1,7 @@
-=== Video Facade for YouTube ===
-Contributors: lloydrick
-Donate link: https://ricklabs.net/buy-me-a-coffee
-Tags: facade, optimization
-Requires at least: 4.7
-Tested up to: 6.8.1
-Requires PHP: 7.4
-Stable tag: 4.3
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+## What this plugin does
+Show a facade/thumbnail for a YouTube Video and load YouTube video only on click.U
 
-Show a facade/thumbnail for a YouTube Video and load YouTube video only on click.
-
-== Description ==
-This plugin adds a shortcode to display a YouTube thumbnail, and loads the video only on click:
+It adds a shortcode to display a YouTube thumbnail, and loads the video only on click:
 
 `[yvf id=" " thumbnail="" alt=" "]`
 
