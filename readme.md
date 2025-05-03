@@ -32,20 +32,20 @@ The shortcode accepts three parameters:
 ### To get the YouTube Video ID
 The video id comes after the `watch?v=` URL query string:
 
-![YouTube Video ID](tutorials/youtube-video-id.png)
+![YouTube Video ID](assets/youtube-video-id.png)
 
 ### To get the image URL
 1. Upload the thumbnail to your WordPress media library
 2. Open the image, and click `Copy URL to Clipboard` to get the image URL:
 
-![Thumbnail URL](tutorials/copy-url-to-clipboard.png)
+![Thumbnail URL](assets/copy-url-to-clipboard.png)
 
 ### IMPORTANT!
 You need to enqueue the CSS and JS on the page where you added the shortcode. This is done manually for now for performance reasons, but a more efficient method is in the works.
 
 1. Get the post ID. You can get this when editing:
 
-![Post ID](tutorials/post-id.png)
+![Post ID](assets/post-id.png)
 
 2. Add the post ID to the array of pages where the CSS and JS will be loaded, by editing the plugin under `Tools -> Plugin File Editor`.
 3. Look for YouTube Video Facade from the dropdown list, then hit `Select`.
