@@ -14,7 +14,7 @@ Show a facade/thumbnail for a YouTube Video and load YouTube video only on click
 == Description ==
 This plugin adds a shortcode to display a YouTube thumbnail, and loads the video only on click:
 
-`[yvf id=\"\" thumbnail=\"\" alt=\"\"]`
+`[yvf id=" " thumbnail="" alt=" "]`
 
 It aims to solve the [Lazy load third-party resources with facades](https://developer.chrome.com/docs/lighthouse/performance/third-party-facades) flag on Lighthouse by preventing YouTube assets from being loaded until the user clicks the play button.
 
