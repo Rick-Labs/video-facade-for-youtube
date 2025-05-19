@@ -6,13 +6,14 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"build": "wp-scripts build --webpack-copy-php",
+		"build": "wp-scripts build",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --webpack-copy-php"
+		"start": "wp-scripts start --webpack-copy-php",
+		"package": "npm run build && zip -r video-facade-for-youtube.zip . -x 'node_modules/*' 'src/*' '.git/*' 'readme.md'"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^30.7.0"
