@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".play-button-overlay").forEach(function (button) {
-        button.addEventListener("click", function () {
-            const container = button.closest(".youtube-thumbnail-preview");
+    document.querySelectorAll(".youtube-thumbnail-preview").forEach(function (container) {
+        container.addEventListener("click", function () {
             const videoId = getYouTubeId(container.getAttribute("data-video-url"));
             if (videoId) {
                 const iframe = document.createElement("iframe");
