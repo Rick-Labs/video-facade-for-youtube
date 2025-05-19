@@ -8,6 +8,8 @@
  * Author URI:  https://profiles.wordpress.org/lloydrick/
  * License:     GPL v2 or later
  * Text Domain: video-facade-for-youtube
+ * Requires at least: 5.6
+ * Requires PHP: 7.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
