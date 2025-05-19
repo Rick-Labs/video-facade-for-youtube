@@ -1,6 +1,6 @@
 {
 	"name": "video-facade-for-youtube",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Optimizes YouTube embed by showing a facade/thumbnail. Loads YouTube embed only on click.",
 	"author": "Lloyd Rick Guyon",
 	"license": "GPL-2.0-or-later",

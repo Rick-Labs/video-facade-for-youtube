@@ -3,7 +3,7 @@
  * Plugin Name: Video Facade for YouTube
  * Description: Optimizes YouTube embeds by showing a facade/thumbnail. Loads YouTube embed only on click.
  * Plugin URI:  https://github.com/Rick-Labs/video-facade-for-youtube
- * Version:     0.2.0
+ * Version:     0.2.1
  * Author:      Lloyd Rick Guyon
  * Author URI:  https://profiles.wordpress.org/lloydrick/
  * License:     GPL v2 or later
