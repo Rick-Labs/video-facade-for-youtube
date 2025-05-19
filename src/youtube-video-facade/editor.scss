@@ -1,0 +1,66 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+/* editor.scss */
+
+/* Container for the block content */
+.youtube-thumbnail-preview {
+    position: relative;
+    max-width: 100%;
+    margin-top: 10px;
+
+    img {
+        width: 100%; /* Ensure the thumbnail is responsive */
+        display: block; /* Remove any unwanted spacing below the image */
+        border-radius: 4px; /* Optional: add rounded corners to the thumbnail */
+    }
+
+    .play-button-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent; /* Make sure no background is behind */
+        border-radius: 50%; /* Optional: to make the play button itself rounded */
+        padding: 10px; /* Ensure the button area has space */
+        z-index: 10; /* Ensure it's on top of the thumbnail */
+    }
+
+    .play-button-overlay svg {
+        fill: #fff; /* White play button */
+        width: 60px; /* Increased size */
+        height: 60px; /* Increased size */
+    }
+}
+
+/* Text control styling */
+.youtube-video-url input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+/* Button for selecting the thumbnail */
+.youtube-thumbnail-upload {
+    margin-top: 15px;
+    text-align: center;
+
+    .components-button {
+        background-color: #0073aa;
+        color: white;
+        border-radius: 4px;
+        padding: 8px 15px;
+    }
+
+    .components-button:hover {
+        background-color: #005a8c;
+    }
+}

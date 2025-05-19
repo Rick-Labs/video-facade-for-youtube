@@ -1,0 +1,45 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+/* style.scss */
+
+/* Container for the thumbnail preview on the frontend */
+.youtube-thumbnail-preview {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    max-width: 100%;
+    margin: 0 auto; /* Center the thumbnail */
+    cursor: pointer; /* Indicate that the thumbnail is clickable */
+    line-height: 0%;
+
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // ✅ prevents squashing
+        display: block;
+    }
+
+    .play-button-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // padding: 15px;
+        
+        svg {
+            fill: #fff; /* White play button */
+            width: 60px; /* Size of the play button */
+            height: 60px; /* Size of the play button */
+        }
+    }
+
+}
+
